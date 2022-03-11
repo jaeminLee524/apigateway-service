@@ -30,6 +30,7 @@ spring:
 #            - AddRequestHeader=second-request, second-request-header2
 #            - AddResponseHeader=second-response, second-response-header2
             - CustomFilter
+            - AuthorizationHeaderFilter # required when http Method GET
       default-filters:
         - name: GlobalFilter
           args:
@@ -37,4 +38,5 @@ spring:
             preLogger: true
             postLogger: true
 
-
+token:
+  secret: user_token
